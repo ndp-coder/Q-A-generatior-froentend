@@ -216,8 +216,8 @@
         let currentDifficulty = 'Easy';
 
         // --- Configuration ---
-        const BACKEND_URL = 'https://qandageneratorba.netlify.app/'; // <-- IMPORTANT: REPLACE THIS URL
-        const RAZORPAY_KEY_ID = '2FGvfwpbhSwQrZjc2Ovd3sK8'; // <-- IMPORTANT: REPLACE THIS KEY
+        const BACKEND_URL = 'https://your-backend-url.onrender.com'; // <-- IMPORTANT: REPLACE THIS URL
+        const RAZORPAY_KEY_ID = 'YOUR_RAZORPAY_KEY_ID'; // <-- IMPORTANT: REPLACE THIS KEY
 
         // --- Initial UI State ---
         outputQaDiv.style.display = 'none';
@@ -225,10 +225,8 @@
 
         // --- Startup Checks ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Check if the backend URL is still a placeholder
-            if (window.location.hostname !== 'localhost' && BACKEND_URL.includes('your-backend-app')) {
+            if (window.location.hostname !== 'localhost' && BACKEND_URL.includes('localhost')) {
                 configErrorDiv.classList.remove('hidden');
-                // Disable buttons if not configured
                 generateBtn.disabled = true;
                 summarizeBtn.disabled = true;
                 raiseFundBtn.disabled = true;
@@ -259,7 +257,7 @@
         });
         payBtn.addEventListener('click', handlePayment);
 
-        // --- Gemini API Logic ---
+        // --- API Logic ---
         generateBtn.addEventListener('click', handleQAGeneration);
         summarizeBtn.addEventListener('click', handleSummarization);
         suggestTopicsBtn.addEventListener('click', handleTopicSuggestion);
@@ -413,8 +411,8 @@
                         }
                     },
                     prefill: {
-                        name: "Chunduru Naga Durga Prasad",
-                        email: "nagadurga20054@gmail.com",
+                        name: "Naga Durga Prasad",
+                        email: "durgaprasad@example.com",
                         contact: "9999999999"
                     },
                     theme: { color: "#3399cc" }
